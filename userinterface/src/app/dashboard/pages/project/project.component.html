@@ -1,0 +1,26 @@
+<h2>Projects</h2>
+<a routerLink='add' class="btn btn-primary">Add Project</a>
+<div class="table-responsive mt-3">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Project Name</th>
+                <th>Employee</th>
+                <th>Estimated Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let project of projectList;let i = index'>
+                <td>{{i + 1}}</td>
+                <td>{{project.projectName}}</td>
+                <td>
+                    <span *ngIf='project.employeeIde'>
+                        {{project.employeeIde.name}}
+                    </span>
+                </td>
+                <td>{{project.estimatedTime}}Hr</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

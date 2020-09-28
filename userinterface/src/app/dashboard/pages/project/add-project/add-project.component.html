@@ -1,0 +1,29 @@
+<h2>Add Project</h2>
+
+<div class="mt-2">
+    <div class="form-group">
+        <label>Project Name</label>
+        <input type="text" [(ngModel)]='fields.projectName' class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Estimated Time (hr)</label>
+        <input type="number" [(ngModel)]='fields.estimatedTime' class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" [(ngModel)]='fields.description' rows="5"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Select Employee</label>
+        <select class="form-control" [(ngModel)]='fields.employeeIde' >
+            <option *ngFor='let employee of employeeList' [value]='employee._id'>{{employee.name}} ( {{employee.email}} )</option>
+        </select>
+
+    </div>
+
+
+
+    <button (click)='Submit()' type="submit" class="btn btn-primary">Submit</button>
+    <a routerLink='/employees' class="btn ml-2 btn-secondary">cancel</a>
+</div>
